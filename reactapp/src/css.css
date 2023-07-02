@@ -1,0 +1,31 @@
+.linkFix {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btnLink {
+    text-decoration: none;
+}
+
+.z-index {
+    z-index: 2;
+}
+
+.aLinkDark {
+    text-decoration: none;
+    color: #fff;
+}
+
+.aLinkLight {
+    text-decoration: none;
+    color: #000;
+}
+
+.tableFix {
+    overflow: hidden;
+}
+
+.mapWidth {
+    width: 550px;
+    height: 350px;
+}
