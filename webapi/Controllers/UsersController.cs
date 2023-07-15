@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.IdentityModel.Tokens;
 using ShopAppAPI.Models;
 using System.ComponentModel.Design.Serialization;
@@ -205,6 +206,42 @@ namespace ShopAppAPI.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status200OK, new
+                {
+                    message = ex.Message,
+                    status = 200,
+                    response = new List<dynamic>()
+                });
+            }
+        }
+
+        [HttpGet]
+        [Route("GetByName/{name}")]
+        public IActionResult GetByName(string name)
+        {
+            try
+            {
+                string token = HttpContext.Request.Headers["Authorization"].ToString();
+
+                bool isValidToken = Jwt.ValidateToken(token, true);
+
+                if (!isValidToken)
+                {
+                    return StatusCode(StatusCodes.Status403Forbidden, new { message = "You are not authorized!" });
+                }
+
+                List<Usuario> data = _usersDataService.GetByName(name);
+
+                return StatusCode(StatusCodes.Status200OK, new
+                {
+                    message = "Success",
+                    status = 200,
+                    response = data
+                });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new
                 {
                     message = ex.Message,
                     status = 200,

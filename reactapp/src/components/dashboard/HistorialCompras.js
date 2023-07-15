@@ -4,6 +4,7 @@ import {
   AccordionSummary,
   Box,
   Button,
+  TablePagination,
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -15,6 +16,22 @@ const HistorialCompras = () => {
   const [facturas, setFacturas] = useState([]);
   const [expanded, setExpanded] = useState(false);
   const [showFactura, setSF] = useState(false);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(13);
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 13));
+    setPage(0);
+  };
+  
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const displayedData = facturas.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -35,7 +52,6 @@ const HistorialCompras = () => {
   useEffect(() => {
     const userId = localStorage.getItem("id_user");
     GetFacturasByUser(userId).then((resp) => {
-      console.log(resp);
       setFacturas(resp.result);
     });
   }, []);
@@ -46,8 +62,8 @@ const HistorialCompras = () => {
         Historial de Compras
       </Typography>
       <Box sx={{ mt: 3 }}>
-        {facturas.length > 0 ? (
-          facturas.map((factura) => {
+        {displayedData.length > 0 ? (
+          displayedData.map((factura) => {
             return (
               <Accordion
                 key={factura.id_Factura}
@@ -83,6 +99,15 @@ const HistorialCompras = () => {
             No tienes facturas registradas
           </Typography>
         )}
+          <TablePagination
+            rowsPerPageOptions={[13, 25, 50]}
+            component="div"
+            count={facturas.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
       </Box>
     </Box>
   );

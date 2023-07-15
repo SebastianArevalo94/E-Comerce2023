@@ -35,9 +35,9 @@ public partial class ShopAppContext : DbContext
     {
         modelBuilder.Entity<AccionesUsuario>(entity =>
         {
-            entity.HasKey(e => e.TipoAccion).HasName("PK__Acciones__D26E0C20EB23712B");
+            entity.HasKey(e => e.Id).HasName("PK__Acciones__D26E0C20EB23712B");
 
-            entity.Property(e => e.TipoAccion)
+            entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("tipoAccion");
             entity.Property(e => e.Nombre)

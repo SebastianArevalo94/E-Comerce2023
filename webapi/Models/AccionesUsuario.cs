@@ -5,7 +5,7 @@ namespace ShopAppAPI.Models;
 
 public partial class AccionesUsuario
 {
-    public int TipoAccion { get; set; }
+    public int Id { get; set; }
 
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 }

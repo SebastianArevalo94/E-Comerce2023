@@ -69,6 +69,62 @@ namespace webapi.DataServices
             }
         }
 
+        public List<AdminInfoLog> GetAdminLog(FilterAdminLog filter)
+        {
+            string sql = "EXEC GetAdminLog @filter, @type, @user, @order";
+            List<AdminInfoLog> list = new List<AdminInfoLog>();
+            using (var connection = _dbContext.Database.GetDbConnection())
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    SqlParameter filterParam = new SqlParameter("@filter", filter.filter);
+                    SqlParameter typeParam = new SqlParameter("@type", filter.type);
+                    SqlParameter userParam = new SqlParameter("@user", filter.user);
+                    SqlParameter orderParam = new SqlParameter("@order", filter.order);
+
+                    command.Parameters.Add(filterParam);
+                    command.Parameters.Add(typeParam);
+                    command.Parameters.Add(userParam);
+                    command.Parameters.Add(orderParam);
+
+                    command.CommandText = sql;
+
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            AdminInfoLog log = new AdminInfoLog()
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("id")),
+                                TipoAccion = reader.GetInt32(reader.GetOrdinal("tipoAccion")),
+                                Descripcion = reader.GetString(reader.GetOrdinal("descripcion")),
+                                Label = reader.GetString(reader.GetOrdinal("label")),
+                                Fecha = reader.GetDateTime(reader.GetOrdinal("fecha")),
+                            };
+
+                            UserInfo user = new UserInfo()
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("id_user")),
+                                NombreCompleto = reader.GetString(reader.GetOrdinal("NombreCompleto")),
+                                Foto = reader.GetString(reader.GetOrdinal("foto")),
+                                Rol = reader.GetInt32(reader.GetOrdinal("rol")),
+                                Rol_desc = reader.GetString(reader.GetOrdinal("rol_desc"))
+                            };
+
+                            log.user = user;
+
+                            list.Add(log);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return list;
+        }
+
+
         public List<InfoLog> GetLogByUser(int user)
         {
             string sql = "EXEC GetLogByUser @user";

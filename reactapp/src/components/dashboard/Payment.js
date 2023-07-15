@@ -200,7 +200,7 @@ const Payment = () => {
                       display: "flex",
                       justifyContent: "center",
                       flexWrap: " wrap",
-                      gap:2
+                      gap: 2,
                     }}
                   >
                     {creditCards.map((cc) => (
@@ -257,11 +257,7 @@ const Payment = () => {
         action={handleCloseError}
         title="Debes seleccionar un medio de pago"
       />
-        <AlertInfo
-                    show={true}
-                    severity={"success"}
-                    content={"example"}
-                />
+      <AlertInfo show={true} severity={"success"} content={"example"} />
       <Box
         sx={{
           display: "flex",

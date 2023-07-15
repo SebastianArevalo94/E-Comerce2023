@@ -7,6 +7,7 @@ import {
   TableCell,
   TableContainer,
   TableHead,
+  TablePagination,
   TableRow,
 } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
@@ -32,6 +33,22 @@ const LogActivity = () => {
   const [showFactura, setSF] = useState(false);
   const [factura, setFactura] = useState({});
   const [infoLogin, setInfoLogin] = useState({});
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(13);
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 13));
+    setPage(0);
+  };
+  
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const displayedData = dataLog.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
 
   const handleShowFactura = () => {
     setSF(!showFactura);
@@ -108,7 +125,7 @@ const LogActivity = () => {
         Registro de Actividad
       </Typography>
       <Box sx={{ m: 4 }}>
-        {dataLog.map((log) => {
+        {displayedData.map((log) => {
           return (
             <Accordion
               expanded={expanded === log.id}
@@ -203,6 +220,15 @@ const LogActivity = () => {
             </Accordion>
           );
         })}
+        <TablePagination
+            rowsPerPageOptions={[13, 20, 50]}
+            component="div"
+            count={dataLog.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
       </Box>
     </Box>
   );

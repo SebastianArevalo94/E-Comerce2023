@@ -1,7 +1,7 @@
 import { Box, Typography, Paper, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
+import FolderSharedIcon from '@mui/icons-material/FolderShared';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import ShopIcon from "@mui/icons-material/Shop";
@@ -62,6 +62,20 @@ const Admin = () => {
           <Link to="/admin/products" className="linkFix">
             <Button color="info" variant="contained">
               Administrar Productos
+            </Button>
+          </Link>
+        </Paper>
+        <Paper
+          elevation={2}
+          sx={{ p: 4, display: "flex", flexDirection: "column" }}
+        >
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <FolderSharedIcon sx={{ fontSize: 170 }} />
+          </Box>
+
+          <Link to="/admin/users-activity" className="linkFix">
+            <Button color="info" variant="contained">
+              Ver Actividad de Usuarios
             </Button>
           </Link>
         </Paper>

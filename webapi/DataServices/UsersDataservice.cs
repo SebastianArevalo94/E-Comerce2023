@@ -217,6 +217,53 @@ namespace webapi.DataServices
             }
         }
 
+        public List<Usuario> GetByName(string name)
+        {
+            try
+            {
+                List<Usuario> result = new List<Usuario>();
+                string sql = "EXEC GetUserByName @name";
+                using (var connection = _dbContext.Database.GetDbConnection())
+                {
+                    connection.Open();
+
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = sql;
+
+                        SqlParameter Name = new SqlParameter("@name", name);
+
+                        command.Parameters.Add(Name);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Usuario usuario = new Usuario();
+                                usuario.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                                usuario.Correo = reader.GetString(reader.GetOrdinal("Correo"));
+                                usuario.Nombre = reader.GetString(reader.GetOrdinal("Nombre"));
+                                usuario.Apellido = reader.GetString(reader.GetOrdinal("Apellido"));
+                                usuario.Contrasenia = reader.GetString(reader.GetOrdinal("Contrasenia"));
+                                usuario.Foto = reader.GetString(reader.GetOrdinal("Foto"));
+                                usuario.Rol = reader.GetInt32(reader.GetOrdinal("Rol"));
+                                usuario.FechaCreacion = reader.GetDateTime(reader.GetOrdinal("FechaCreacion"));
+                                result.Add(usuario);
+                            }
+                        }
+
+                    }
+                    connection.Close();
+
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void EditUser(Usuario usuario, int id)
         {
             try
