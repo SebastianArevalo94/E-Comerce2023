@@ -4,31 +4,47 @@ import {
   AccordionSummary,
   Autocomplete,
   Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
+  Stack,
   TablePagination,
   TextField,
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useEffect, useState } from "react";
-import { GetAllUsers } from "../../services/users-service";
+import { GetAllUsers, GetOneUser } from "../../services/users-service";
 import { GetTipoAcciones } from "../../services/acciones-service";
-import { GetAdminLog, GetInfoUserAuthByLog } from "../../services/log.service";
+import {
+  GetAdminLog,
+  GetFacturaByLog,
+  GetInfoUserAuthByLog,
+} from "../../services/log.service";
 import MapComponent from "../utils/Map";
+import Factura from "../utils/Factura";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
 const UsersActivity = () => {
   const [expanded, setExpanded] = useState(false);
   const [users, setUsers] = useState([]);
   const [dataLog, setDataLog] = useState([]);
   const [userName, setUserName] = useState("");
-  const [filterName, setFilterName] = useState("");
+  const [showFactura, setSF] = useState(false);
   const [tipoAcciones, setTipoAcciones] = useState([]);
   const [infoLogin, setInfoLogin] = useState({});
+  const [userInfoLog, setUserInfoLog] = useState({});
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(13);
+  const [factura, setFactura] = useState({});
+  const [userLog, setUserLog] = useState({});
 
   const defaultUser = {
     id: 0,
@@ -77,12 +93,22 @@ const UsersActivity = () => {
   };
 
   const handleChange = (panel, panel2) => (event, isExpanded) => {
+    console.log(panel, panel2);
     setExpanded(isExpanded ? panel : false);
-    //setSF(false);
-    if (panel2 == 1 || panel2 == 2 || panel2 == 3 || panel2 == 6) {
+    setSF(false);
+    console.log(panel, panel2);
+    if (panel2 == 1 || panel2 == 2 || panel2 == 3) {
       GetInfoUserAuthByLog(panel).then((log) => {
         if (log.results !== null) {
           setInfoLogin(log.results);
+          if (log.results.usuario !== null) {
+            GetOneUser(log.results.usuario)
+              .then((resp) => {
+                setUserInfoLog(resp.response);
+                console.log(resp.response);
+              })
+              .catch();
+          }
         }
       });
     }
@@ -125,6 +151,19 @@ const UsersActivity = () => {
     //console.log(order);
   };
 
+  const _GetFacturaByLog = (log) => {
+    GetFacturaByLog(log)
+      .then((resp) => {
+        if (resp.result !== null) {
+          setFactura(resp.result);
+        }
+        setSF(true);
+      })
+      .catch((err) => {
+        "";
+      });
+  };
+
   const ReadDateTime = (datetime) => {
     const año = datetime.getFullYear();
     const mes = String(datetime.getMonth() + 1).padStart(2, "0"); // El mes está basado en cero, por lo que se suma 1
@@ -135,6 +174,15 @@ const UsersActivity = () => {
 
     return `${año}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
   };
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    fontSize: 18,
+    color: theme.palette.text.secondary,
+  }));
 
   useEffect(() => {
     GetAllUsers()
@@ -252,23 +300,29 @@ const UsersActivity = () => {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-              <Typography sx={{ fontSize: 23 }}>
-                  {/* {log.label} {" el dia "}
-                  {log.fecha.toLocaleDateString()} {" a las "}
-                  {log.fecha.toLocaleTimeString()} */}
-                  {log.label} {ReadDateTime(new Date(log.fecha))}
-                </Typography>
                 {log.tipoAccion == 6 ? (
                   <Box>
-                    {/* <Button
-                      sx={{ mt: 2 }}
-                      color="primary"
-                      variant="contained"
-                      onClick={() => _GetFacturaByLog(log.id)}
+                    <Box
+                      sx={{ display: "flex", justifyContent: "center", gap: 5 }}
                     >
-                      Ver Factura
-                    </Button>
-                    {showFactura ? <Factura factura={factura} /> : <></>} */}
+                      <Button
+                        sx={{ mt: 2 }}
+                        color="primary"
+                        variant="contained"
+                        onClick={() => _GetFacturaByLog(log.id)}
+                      >
+                        Ver Factura
+                      </Button>
+                      <Button
+                        sx={{ mt: 2 }}
+                        color="secondary"
+                        variant="contained"
+                        onClick={() => setSF(false)}
+                      >
+                        Ocultar
+                      </Button>
+                    </Box>
+                    {showFactura ? <Factura factura={factura} /> : <></>}
                   </Box>
                 ) : (
                   ""
@@ -286,7 +340,7 @@ const UsersActivity = () => {
                         justifyContent: "space-evenly",
                       }}
                     >
-                      <Box sx={{ mt: 7 }}>
+                      <Box sx={{ mt: 0 }}>
                         <Typography sx={{ fontSize: 32 }}>
                           {log.tipoAccion === 1
                             ? "Informacion de inicio de sesion"
@@ -296,8 +350,20 @@ const UsersActivity = () => {
                             ? "Informacion de registro"
                             : null}
                         </Typography>
-                        <Box sx={{ mt: 1 }}>
-                          <Typography sx={{ fontSize: 25 }}>
+                        <Box sx={{ mt: 2 }}>
+                          <Stack
+                            sx={{ display: "flex", justifyContent: "center" }}
+                            direction="row"
+                            spacing={2}
+                          >
+                            <Item>IP: {infoLogin.ip}</Item>
+                            <Item>Pais {infoLogin.pais}</Item>
+                            <Item>Ciudad: {infoLogin.ciudad}</Item>
+                            <Item>
+                              Fecha: {ReadDateTime(new Date(log.fecha))}
+                            </Item>
+                          </Stack>
+                          {/* <Typography sx={{ fontSize: 25 }}>
                             Ip: {infoLogin.ip}
                           </Typography>
                           <Typography sx={{ fontSize: 25 }}>
@@ -305,11 +371,60 @@ const UsersActivity = () => {
                           </Typography>
                           <Typography sx={{ fontSize: 25 }}>
                             Ciudad: {infoLogin.ciudad}
+                          </Typography> */}
+                          <Typography sx={{ mt: 4, fontSize: 35 }}>
+                            Informacion de Usuario:
                           </Typography>
+                          <Card
+                            sx={{
+                              maxWidth: 750,
+                              mt: 2,
+                              gap: 2,
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <Box sx={{ mt: 3 }}>
+                              <img
+                                alt="green iguana"
+                                //height="170"
+                                width="250"
+                                height="250"
+                                src={userInfoLog.foto}
+                              />
+                            </Box>
+                            <CardContent sx={{}}>
+                              {/* <Typography
+                                gutterBottom
+                                variant="h4"
+                                component="div"
+                              >
+                                Sebastian Arevalo
+                              </Typography> */}
+                              <Box sx={{ mt: 3, display: "flex", gap: 2 }}>
+                                <Stack direction="column" spacing={2}>
+                                  <Item>Nombre Completo</Item>
+                                  <Item>Correo:</Item>
+                                  <Item>Direccion</Item>
+                                  <Item>Documento</Item>
+                                </Stack>
+                                <Stack direction="column" spacing={2}>
+                                  <Item>{`${userInfoLog.nombre} ${userInfoLog.apellido}`}</Item>
+                                  <Item>{userInfoLog.correo}</Item>
+                                  <Item>{userInfoLog.direccion}</Item>
+                                  <Item>{userInfoLog.documento}</Item>
+                                </Stack>
+                              </Box>
+                            </CardContent>
+                            {/* <CardActions>
+                              <Button size="small">Share</Button>
+                              <Button size="small">Learn More</Button>
+                            </CardActions> */}
+                          </Card>
                         </Box>
                       </Box>
                       <Box>
-                        <Typography sx={{ fontSize: 25, mb: 2 }}>
+                        <Typography sx={{ fontSize: 33, mb: 2 }}>
                           Ubicacion:
                         </Typography>
                         <MapComponent

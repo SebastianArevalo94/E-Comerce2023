@@ -82,7 +82,7 @@ export const signIn = (user) => {
         navigator.geolocation.getCurrentPosition(
           async (position) => {
             const LogUserAuth = {
-              usuario: 1,
+              usuario: 0,
               log: 0,
               tipoAccion: 0,
               latitud: position.coords.latitude,

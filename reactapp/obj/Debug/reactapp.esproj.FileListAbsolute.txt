@@ -1,2 +1,4 @@
 C:\Users\USUARIO\source\repos\ShopApp2\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
 C:\Users\USUARIO\source\repos\ShopApp2\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Source\Repos\E-Comerce2023\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\USUARIO\Source\Repos\E-Comerce2023\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache

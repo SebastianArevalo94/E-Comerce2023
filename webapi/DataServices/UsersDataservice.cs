@@ -172,10 +172,10 @@ namespace webapi.DataServices
                 throw new Exception(ex.Message, ex);
             }
         }
-
-        public Usuario GetById(int id)
+         
+        public UserLog GetById(int id)
         {
-            Usuario usuario = new Usuario();
+            UserLog usuario = new UserLog();
             try
             {
                 string sql = "EXEC GetUserById @Id";
@@ -198,10 +198,8 @@ namespace webapi.DataServices
                                 usuario.Correo = reader.GetString(reader.GetOrdinal("Correo"));
                                 usuario.Nombre = reader.GetString(reader.GetOrdinal("Nombre"));
                                 usuario.Apellido = reader.GetString(reader.GetOrdinal("Apellido"));
-                                usuario.Contrasenia = reader.GetString(reader.GetOrdinal("Contrasenia"));
                                 usuario.Foto = reader.GetString(reader.GetOrdinal("Foto"));
                                 usuario.Rol = reader.GetInt32(reader.GetOrdinal("Rol"));
-                                usuario.FechaCreacion = reader.GetDateTime(reader.GetOrdinal("FechaCreacion"));
                                 usuario.Direccion = reader.GetString(reader.GetOrdinal("Direccion"));
                                 usuario.Documento = reader.GetString(reader.GetOrdinal("Documento"));
                             }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USUARIO\\source\\repos\\ShopApp3\\webapi\\webapi.csproj": {}
+    "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USUARIO\\source\\repos\\ShopApp3\\webapi\\webapi.csproj": {
+    "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\ShopApp3\\webapi\\webapi.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\USUARIO\\source\\repos\\ShopApp3\\webapi\\webapi.csproj",
+        "projectPath": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\source\\repos\\ShopApp3\\webapi\\obj\\",
+        "outputPath": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,6 +52,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.5, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -94,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

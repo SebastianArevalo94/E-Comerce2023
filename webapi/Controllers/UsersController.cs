@@ -102,6 +102,7 @@ namespace ShopAppAPI.Controllers
                         logAuthUser.Log = logAU2;
                         logAuthUser.Fecha = DateTime.Now;
                         logAuthUser.TipoAccion = 5;
+                        logAuthUser.Usuario = usuarioDb.Id;
 
                         _logDataService.RegisterUserAuth(logAuthUser);
 
@@ -117,7 +118,8 @@ namespace ShopAppAPI.Controllers
                     logAuthUser.Log = logAU1;
                     logAuthUser.Fecha = DateTime.Now;
                     logAuthUser.TipoAccion = 1;
-
+                    logAuthUser.Usuario = usuarioDb.Id;
+    
                     _logDataService.RegisterUserAuth(logAuthUser);
 
                     return StatusCode(StatusCodes.Status200OK, new
@@ -308,7 +310,7 @@ namespace ShopAppAPI.Controllers
                     return StatusCode(StatusCodes.Status403Forbidden, new { message = "You are not authorized!" });
                 }
 
-                Usuario usuario = _usersDataService.GetById(id);
+                UserLog usuario = _usersDataService.GetById(id);
 
                 if (usuario.Id == 0)
                 {
