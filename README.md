@@ -3,6 +3,8 @@
 
 Tienda completa para vender y comprar productos.
 
+## Caracteristicas principales:
+
 - Perfiles tipo Administrador y Cliente
 - Carrito de compras
 - Historial de compras
