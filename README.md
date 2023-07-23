@@ -41,3 +41,13 @@ Este es la seccion de perfil, en este se puede acceder a:
 - Administrador de Tarjetas de Credito
 - Historial de compras
 
+
+## Panel Administrador
+
+![Alt text](https://i.ibb.co/dL60Hbt/Screenshot-5.png "This is some image...")
+
+Este es el perfil administrador, en este panel el administrador tiene:
+
+- Acceso a Modulo Administracion de Usuarios
+- Acceso a Modulo Administracion de Productos
+- Acceso a Modulo Actividad Usuarios
