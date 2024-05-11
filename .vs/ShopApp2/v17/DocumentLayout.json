@@ -84,7 +84,7 @@
               "RelativeDocumentMoniker": "webapi\\Program.cs",
               "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Program.cs",
               "RelativeToolTip": "webapi\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAAhAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAUwBoAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-11T17:16:52.825Z",
               "EditorCaption": ""
@@ -99,8 +99,7 @@
               "RelativeToolTip": "webapi\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAB1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-11T15:38:22.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T15:38:22.026Z"
             },
             {
               "$type": "Document",
@@ -151,8 +150,7 @@
               "RelativeToolTip": "webapi\\Controllers\\AccionesController.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAASwA4AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T08:06:03.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T08:06:03.207Z"
             },
             {
               "$type": "Document",
@@ -164,8 +162,7 @@
               "RelativeToolTip": "webapi\\DataServices\\CreditCardDataService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:20:59.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T20:20:59.891Z"
             },
             {
               "$type": "Document",
@@ -177,8 +174,7 @@
               "RelativeToolTip": "webapi\\DataServices\\CategoryDataService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:20:43.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T20:20:43.151Z"
             },
             {
               "$type": "Document",
@@ -190,8 +186,7 @@
               "RelativeToolTip": "webapi\\Controllers\\ProductsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIBJwB0AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:20:16.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T20:20:16.827Z"
             },
             {
               "$type": "Document",
@@ -216,8 +211,7 @@
               "RelativeToolTip": "webapi\\Controllers\\CreditCardController.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAApwBoAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:19:10.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T20:19:10.159Z"
             },
             {
               "$type": "Document",
@@ -242,8 +236,7 @@
               "RelativeToolTip": "webapi\\Controllers\\CategoriasController.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAApwBYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:17:31.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T20:17:31.243Z"
             },
             {
               "$type": "Document",
@@ -255,8 +248,7 @@
               "RelativeToolTip": "webapi\\DataServices\\ProductsDataService.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAawBIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:17:00.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T20:17:00.281Z"
             },
             {
               "$type": "Document",
@@ -268,8 +260,7 @@
               "RelativeToolTip": "webapi\\DataServices\\AccionesDataService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:16:39.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T20:16:39.65Z"
             },
             {
               "$type": "Document",
