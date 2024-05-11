@@ -10,10 +10,12 @@ namespace webapi.DataServices
     public class AccionesDataService
     {
         public readonly ShopAppContext _dbContext;
+        public readonly IConfiguration _configuration;
 
-        public AccionesDataService(ShopAppContext dbContext)
+        public AccionesDataService(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration;
         }
 
         public List<AccionesUsuario> GetTipoAcciones()
@@ -23,7 +25,7 @@ namespace webapi.DataServices
                 string sql = "EXEC GetTipoAcciones";
                 List<AccionesUsuario> result = new List<AccionesUsuario> ();
 
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 

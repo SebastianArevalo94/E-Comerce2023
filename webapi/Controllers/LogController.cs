@@ -15,16 +15,14 @@ namespace ShopAppAPI.Controllers
     public class LogController : ControllerBase
     {
         private readonly ShopAppContext _dbContext;
-        private readonly ProductsDataService _productsDataService;
-        private readonly UsersDataservice _usersDataService;
         private readonly LogDataService _logDataService;
+        private readonly IConfiguration _configuration;
 
-        public LogController(ShopAppContext dbContext)
+        public LogController(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
-            _productsDataService = new ProductsDataService(_dbContext);
-            _usersDataService = new UsersDataservice(_dbContext);
-            _logDataService = new LogDataService(_dbContext);
+            _configuration = configuration;
+            _logDataService = new LogDataService(_dbContext, _configuration);
         }
 
         [HttpGet]

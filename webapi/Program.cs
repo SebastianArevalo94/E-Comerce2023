@@ -13,8 +13,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+string connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ?? builder.Configuration.GetConnectionString("SQL_STRING");
+
 //Configuracion Context para conectarse a la base de datos
-builder.Services.AddDbContext<ShopAppContext>(opt =>opt.UseSqlServer(builder.Configuration.GetConnectionString("SQL_STRING")));
+builder.Services.AddDbContext<ShopAppContext>(opt =>opt.UseSqlServer(connectionString));
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

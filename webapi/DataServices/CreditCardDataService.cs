@@ -16,10 +16,12 @@ namespace webapi.DataServices
     public class CreditCardDataService
     {
         private readonly ShopAppContext _dbContext;
+        private readonly IConfiguration _configuration;
 
-        public CreditCardDataService(ShopAppContext dbContext)
+        public CreditCardDataService(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration;
         }
 
         public void CreateCC(CreditCard creditCard)
@@ -27,7 +29,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC CreateCC @CardHolder, @Numero, @Expira, @CCV, @Tipo, @id_user";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -66,7 +68,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC EditCC @Id, @CardHolder, @Numero, @Expira, @CCV, @Tipo, @id_user";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -106,7 +108,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC DeleteCC @Id";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -136,7 +138,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetCreditCardsByUser @Id";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -176,7 +178,7 @@ namespace webapi.DataServices
             {
                 string sql = "EXEC GetCCById @Id";
                 CreditCard creditCard = new CreditCard();
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())

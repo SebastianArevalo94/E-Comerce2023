@@ -16,10 +16,12 @@ namespace webapi.DataServices
     public class LogDataService
     {
         private readonly ShopAppContext _dbContext;
+        private IConfiguration _configuration;
 
-        public LogDataService(ShopAppContext dbContext)
+        public LogDataService(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration;
         }
 
 
@@ -28,7 +30,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC CreateLogAccionUsuario @id_usuario, @tipoAccion, @fechaAccion";
-                using (var connection = new SqlConnection("Server=(local); Database=ShopApp; Integrated Security=true; TrustServerCertificate=True"))
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
 
                     connection.Open();
@@ -73,7 +75,7 @@ namespace webapi.DataServices
         {
             string sql = "EXEC GetAdminLog @filter, @type, @user, @order";
             List<AdminInfoLog> list = new List<AdminInfoLog>();
-            using (var connection = _dbContext.Database.GetDbConnection())
+            using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
             {
                 connection.Open();
                 using (var command = connection.CreateCommand())
@@ -129,7 +131,7 @@ namespace webapi.DataServices
         {
             string sql = "EXEC GetLogByUser @user";
             List<InfoLog> list = new List<InfoLog>();
-            using (var connection = _dbContext.Database.GetDbConnection())
+            using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
             {
                 connection.Open();
                 using (var command = connection.CreateCommand())
@@ -166,7 +168,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC RegisterLogUserAuth @usuario, @log, @tipoAccion, @latitud, @longitud, @fecha, @ip, @pais, @ciudad";
-                using (var connection = new SqlConnection("Server=(local); Database=ShopApp; Integrated Security=true; TrustServerCertificate=True"))
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
 
                     connection.Open();
@@ -213,7 +215,7 @@ namespace webapi.DataServices
             string sql = "EXEC GetInfoUserAuthByLog @log";
             LogAuthUser logAuthUser = null;
 
-            using (var connection = new SqlConnection("Server=(local); Database=ShopApp; Integrated Security=true; TrustServerCertificate=True"))
+            using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
             {
                 connection.Open();
                 using (var command = connection.CreateCommand())

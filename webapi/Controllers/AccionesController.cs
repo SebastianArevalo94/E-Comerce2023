@@ -16,11 +16,13 @@ namespace ShopAppAPI.Controllers
     {
         private readonly ShopAppContext _dbContext;
         private readonly AccionesDataService _accionesDataService;
+        private readonly IConfiguration _configuration;
 
-        public AccionesController(ShopAppContext dbContext)
+        public AccionesController(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
-            _accionesDataService = new AccionesDataService(_dbContext);
+            _configuration = configuration;
+            _accionesDataService = new AccionesDataService(_dbContext, _configuration);
         }
 
         [HttpGet]

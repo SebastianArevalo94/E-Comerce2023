@@ -14,10 +14,12 @@ namespace webapi.DataServices
     public class CategoryDataService
     {
         private readonly ShopAppContext _dbContext;
+        private readonly IConfiguration _configuration;
 
-        public CategoryDataService(ShopAppContext dbContext)
+        public CategoryDataService(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration;
         }
 
         public void CreateCategory(Categoria categoria)
@@ -25,7 +27,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC CreateCategory @Nombre";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -54,7 +56,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC EditCategory @Codigo, @Nombre";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -88,7 +90,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetCategories";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -125,7 +127,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetOneCategory @Codigo";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -165,7 +167,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetCategoryByName @name";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -208,7 +210,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC DeleteCategory @Codigo";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 

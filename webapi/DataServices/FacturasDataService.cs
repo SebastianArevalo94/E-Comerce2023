@@ -16,15 +16,18 @@ namespace webapi.DataServices
     public class FacturasDataService
     {
         private readonly ShopAppContext _dbContext;
+        private readonly IConfiguration _configuration;
 
-        public FacturasDataService(ShopAppContext dbContext)
+        public FacturasDataService(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration;
+
         }
 
         public int GenerarFactura(List<Producto_Comprado> products, Factura factura)
         {
-            using (var connection = _dbContext.Database.GetDbConnection())
+            using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
             {
                 connection.Open();
 
@@ -97,7 +100,7 @@ namespace webapi.DataServices
             string sql = "EXEC GetFacturasByUser @usuario";
             List<InfoFactura> resultado = new List<InfoFactura>();
 
-            using (var connection = _dbContext.Database.GetDbConnection())
+            using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
             {
                 connection.Open();
                 using (var command = connection.CreateCommand())
@@ -170,7 +173,7 @@ namespace webapi.DataServices
             string sql = "EXEC GetFacturaByLog @log";
             InfoFactura factura = null;
 
-            using (var connection = _dbContext.Database.GetDbConnection())
+            using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
             {
                 connection.Open();
                 using (var command = connection.CreateCommand())

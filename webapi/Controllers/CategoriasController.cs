@@ -15,18 +15,14 @@ namespace ShopAppAPI.Controllers
     public class CategoriasController : ControllerBase
     {
         private readonly ShopAppContext _dbContext;
-        private readonly ProductsDataService _productsDataService;
-        private readonly UsersDataservice _usersDataService;
-        private readonly CreditCardDataService _creditCardDataService;
         private readonly CategoryDataService _categoryDataService;
+        public readonly IConfiguration _configuration;
 
-        public CategoriasController(ShopAppContext dbContext)
+        public CategoriasController(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
-            _productsDataService = new ProductsDataService(_dbContext);
-            _usersDataService = new UsersDataservice(_dbContext);
-            _creditCardDataService = new CreditCardDataService(_dbContext);
-            _categoryDataService = new CategoryDataService(_dbContext);
+            _configuration = configuration;
+            _categoryDataService = new CategoryDataService(_dbContext, _configuration);
         }
 
         //Get All Categories

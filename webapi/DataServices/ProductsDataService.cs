@@ -12,11 +12,13 @@ namespace webapi.DataServices
 {
     public class ProductsDataService
     {
-        private readonly ShopAppContext _dbContext;
+        public readonly ShopAppContext _dbContext;
+        public readonly IConfiguration _configuration;
 
-        public ProductsDataService(ShopAppContext dbContext)
+        public ProductsDataService(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration;
         }
 
         #region Productos
@@ -28,7 +30,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetAllProducts";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -71,7 +73,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = $"EXEC GetByName {name}";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -113,7 +115,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetByCategory @Category";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -164,7 +166,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetProductById @Id";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -209,7 +211,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC CreateProduct @Nombre, @Precio, @Descripcion, @Categoria, @Foto, @Cantidad";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -248,7 +250,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC EditProduct @Id, @Nombre, @Precio,  @Descripcion, @Categoria, @Foto, @Cantidad";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -289,7 +291,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC DeleteProduct @Id";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 

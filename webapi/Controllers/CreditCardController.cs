@@ -18,13 +18,16 @@ namespace ShopAppAPI.Controllers
         private readonly ProductsDataService _productsDataService;
         private readonly UsersDataservice _usersDataService;
         private readonly CreditCardDataService _creditCardDataService;
+        private readonly IConfiguration _configuration;
 
-        public CreditCardController(ShopAppContext dbContext)
+        public CreditCardController(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
-            _productsDataService = new ProductsDataService(_dbContext);
-            _usersDataService = new UsersDataservice(_dbContext);
-            _creditCardDataService = new CreditCardDataService(_dbContext);
+            _configuration = configuration;
+            _productsDataService = new ProductsDataService(_dbContext, _configuration);
+            _usersDataService = new UsersDataservice(_dbContext, _configuration);
+            _creditCardDataService = new CreditCardDataService(_dbContext, _configuration);
+            
         }
 
         // Create Credit Card

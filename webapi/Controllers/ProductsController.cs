@@ -17,12 +17,14 @@ namespace ShopAppAPI.Controllers
         private readonly ShopAppContext _dbContext;
         private readonly ProductsDataService _productsDataService;
         private readonly UsersDataservice _usersDataService;
+        private readonly IConfiguration _configuration;
 
-        public ProductsController(ShopAppContext dbContext)
+        public ProductsController(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
-            _productsDataService = new ProductsDataService(_dbContext);
-            _usersDataService = new UsersDataservice(_dbContext);
+            _configuration = configuration;
+            _productsDataService = new ProductsDataService(_dbContext, _configuration);
+            _usersDataService = new UsersDataservice(_dbContext, _configuration);
         }
 
         #region Productos

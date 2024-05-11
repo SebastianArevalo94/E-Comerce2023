@@ -1,0 +1,292 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\controllers\\accionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\controllers\\accionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\controllers\\facturascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\controllers\\facturascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\dataservices\\facturasdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\dataservices\\facturasdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\dataservices\\logdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\dataservices\\logdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\controllers\\creditcardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\controllers\\creditcardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\dataservices\\usersdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\dataservices\\usersdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\dataservices\\productsdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\dataservices\\productsdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\dataservices\\creditcarddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\dataservices\\creditcarddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\dataservices\\accionesdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\dataservices\\accionesdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\dataservices\\categorydataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\dataservices\\categorydataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|c:\\users\\usuario\\source\\repos\\e-comerce2023\\webapi\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FE77978-F9F8-48B0-804D-E9B69593375C}|webapi\\webapi.csproj|solutionrelative:webapi\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Program.cs",
+              "RelativeDocumentMoniker": "webapi\\Program.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Program.cs",
+              "RelativeToolTip": "webapi\\Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T17:16:52.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\appsettings.json",
+              "RelativeDocumentMoniker": "webapi\\appsettings.json",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\appsettings.json",
+              "RelativeToolTip": "webapi\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAB1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-11T15:38:22.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsersDataservice.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\UsersDataservice.cs",
+              "RelativeDocumentMoniker": "webapi\\DataServices\\UsersDataservice.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\UsersDataservice.cs",
+              "RelativeToolTip": "webapi\\DataServices\\UsersDataservice.cs",
+              "ViewState": "AQIAADoBAAAAAAAAAIBJwFMBAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T13:50:59.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LogDataService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\LogDataService.cs",
+              "RelativeDocumentMoniker": "webapi\\DataServices\\LogDataService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\LogDataService.cs",
+              "RelativeToolTip": "webapi\\DataServices\\LogDataService.cs",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAAwNUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T00:19:25.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FacturasController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\FacturasController.cs",
+              "RelativeDocumentMoniker": "webapi\\Controllers\\FacturasController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\FacturasController.cs",
+              "RelativeToolTip": "webapi\\Controllers\\FacturasController.cs",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAcwHYAAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T00:19:17.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccionesController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\AccionesController.cs",
+              "RelativeDocumentMoniker": "webapi\\Controllers\\AccionesController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\AccionesController.cs",
+              "RelativeToolTip": "webapi\\Controllers\\AccionesController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAASwA4AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T08:06:03.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreditCardDataService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\CreditCardDataService.cs",
+              "RelativeDocumentMoniker": "webapi\\DataServices\\CreditCardDataService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\CreditCardDataService.cs",
+              "RelativeToolTip": "webapi\\DataServices\\CreditCardDataService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:20:59.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CategoryDataService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\CategoryDataService.cs",
+              "RelativeDocumentMoniker": "webapi\\DataServices\\CategoryDataService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\CategoryDataService.cs",
+              "RelativeToolTip": "webapi\\DataServices\\CategoryDataService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:20:43.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "webapi\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "webapi\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwB0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:20:16.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\LogController.cs",
+              "RelativeDocumentMoniker": "webapi\\Controllers\\LogController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\LogController.cs",
+              "RelativeToolTip": "webapi\\Controllers\\LogController.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAwF4AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:19:38.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreditCardController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\CreditCardController.cs",
+              "RelativeDocumentMoniker": "webapi\\Controllers\\CreditCardController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\CreditCardController.cs",
+              "RelativeToolTip": "webapi\\Controllers\\CreditCardController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAApwBoAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:19:10.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FacturasDataService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\FacturasDataService.cs",
+              "RelativeDocumentMoniker": "webapi\\DataServices\\FacturasDataService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\FacturasDataService.cs",
+              "RelativeToolTip": "webapi\\DataServices\\FacturasDataService.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAAwHAAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:18:33.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "webapi\\Controllers\\CategoriasController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "webapi\\Controllers\\CategoriasController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAApwBYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:17:31.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductsDataService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\ProductsDataService.cs",
+              "RelativeDocumentMoniker": "webapi\\DataServices\\ProductsDataService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\ProductsDataService.cs",
+              "RelativeToolTip": "webapi\\DataServices\\ProductsDataService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAawBIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:17:00.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccionesDataService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\AccionesDataService.cs",
+              "RelativeDocumentMoniker": "webapi\\DataServices\\AccionesDataService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\DataServices\\AccionesDataService.cs",
+              "RelativeToolTip": "webapi\\DataServices\\AccionesDataService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:16:39.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "webapi\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\E-Comerce2023\\webapi\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "webapi\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAtwFMAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T20:16:30.596Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

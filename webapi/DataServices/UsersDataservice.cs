@@ -14,10 +14,12 @@ namespace webapi.DataServices
     public class UsersDataservice
     {
         private readonly ShopAppContext _dbContext;
+        private IConfiguration _configuration;
 
-        public UsersDataservice(ShopAppContext dbContext)
+        public UsersDataservice(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration;
         }
 
         public Usuario GetByEmail(string email)
@@ -26,7 +28,7 @@ namespace webapi.DataServices
             {
                 Usuario usuario = new Usuario();
                 string sql = "EXEC GetUserByEmail @Correo";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -75,7 +77,7 @@ namespace webapi.DataServices
             {
                 Usuario createdUser = new Usuario();
                 string sql = "EXEC CreateUser @Correo, @Nombre, @Apellido, @Contrasenia, @Foto, @Rol, @FechaCreacion, @Direccion, @Documento";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -140,7 +142,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetAllUsers";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -179,7 +181,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC GetUserById @Id";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -221,7 +223,7 @@ namespace webapi.DataServices
             {
                 List<Usuario> result = new List<Usuario>();
                 string sql = "EXEC GetUserByName @name";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -267,7 +269,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC EditUser @Id, @Nombre, @Apellido, @Correo, @Contrasenia, @Foto, @Rol, @Direccion, @Documento";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
@@ -311,7 +313,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC Deleteuser @Id";
-                using (var connection = _dbContext.Database.GetDbConnection())
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 
@@ -340,7 +342,7 @@ namespace webapi.DataServices
             try
             {
                 string sql = "EXEC Create_UsuarioCompras @log, @factura, @usuario, @fecha";
-                using (var connection = new SqlConnection("Server=(local); Database=ShopApp; Integrated Security=true; TrustServerCertificate=True"))
+                using (var connection = new SqlConnection(_configuration["ConnectionStrings:SQL_STRING"]))
                 {
                     connection.Open();
 

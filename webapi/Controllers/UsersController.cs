@@ -23,12 +23,15 @@ namespace ShopAppAPI.Controllers
         private readonly ShopAppContext _dbContext;
         private readonly UsersDataservice _usersDataService;
         private readonly LogDataService _logDataService;
+        private readonly IConfiguration _configuration;
 
-        public UsersController(ShopAppContext dbContext)
+        public UsersController(ShopAppContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
-            _usersDataService = new UsersDataservice(_dbContext);
-            _logDataService = new LogDataService(_dbContext);
+            _configuration = configuration;
+            _usersDataService = new UsersDataservice(_dbContext, _configuration); 
+            _logDataService = new LogDataService(_dbContext, _configuration);
+            
         }
 
         //Registro
@@ -110,7 +113,7 @@ namespace ShopAppAPI.Controllers
                     }
 
                     logUsuario.IdUsuario = usuarioDb.Id;
-                    logUsuario.TipoAccion = 1;
+                    logUsuario.TipoAccion = 1; 
                     logUsuario.FechaAccion = DateTime.Now;
 
                     int logAU1 = _logDataService.CreateLogAcccionUsuario(logUsuario);
